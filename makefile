@@ -9,7 +9,7 @@ LDFLAGS = -std=c++1y -stdlib=libc++ -lc++abi
 all: $(EXENAME)
 
 wsudoku: testgrid.o
-	$(LD) testgrid.o $(LDFLAGS) -o wsudoku
+	$(LD) testgrid.o $(LDFLAGS) -lpthread -o wsudoku
 
 testgrid.o: testgrid.cpp grid.h
 	$(CXX) $(CXXFLAGS) testgrid.cpp
